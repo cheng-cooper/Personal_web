@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>宋鱷壹的個人網站</title>
+    <link rel="icon" href="https://i.meee.com.tw/DLJV7m1.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div id="app">
+        <section id="about_me">
+                <div class="img"></div>
+                <div class="info">
+                    <div class="avatar"></div>
+                    <div class="name">宋鱷壹</div>
+                </div>
+        </section>
+
+        <section id="content">
+            <div class="box">
+                <div class="card" v-for="i in role">
+                    <img :src="i.avatar[0]" alt="頭像" class="avatar">
+                    <div class="sever">
+                        <img :src="i.sever_img" alt="伺服器圖片" class="sever_img">
+                        <div class="sever_name">{{i.sever_name}}</div>
+                    </div>
+                    <div class="name">姓名：{{i.name}}</div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="./js/bootstrap.js"></script>
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <script src="./js/vue.js"></script>
+    <script src="./js/script.js" async></script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.dcc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fdc {
+  display: flex;
+  flex-direction: columns;
+}
+
+.hidden {
+  display: none;
+}
+
+section {
+  width: 100vw;
+}
+
+#about_me {
+  width: 100%;
+  margin-bottom: 2rem;
+  .img {
+    width: 100%;
+    height: clamp(10vh, 30vw, 30vh);
+    background: url(https://meee.com.tw/x5sT3xj.png) no-repeat bottom
+      center/cover;
+    filter: brightness(0.6);
+  }
+  .info {
+    width: 100%;
+    transform: translateY(-50%);
+    display: flex;
+    .avatar {
+      margin-left: 15vw;
+      aspect-ratio: 1/1;
+      height: clamp(10vh, 20vw, 20vh);
+      border-radius: 50%;
+      background: url(https://i.meee.com.tw/DLJV7m1.png) no-repeat
+        center/cover#fff;
+      border: 3px solid #1ca127;
+    }
+    .name {
+      margin-left: 2rem;
+      padding: 5px;
+      font-size: clamp(1.5rem, 7vw, 3rem);
+      font-weight: bold;
+      color: #fff;
+    }
+  }
+}
+
+#content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @media (max-width: 600px) {
+    .box {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  .box {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2rem;
+    
+    .card {
+      width: clamp(100px, 80vw, 250px);
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      gap: 1rem;
+      .avatar {
+        width: clamp(150px, 30vw, 200px);
+        aspect-ratio: 1/1;
+        margin-bottom: 20px;
+      }
+      .sever {
+        display: flex;
+        gap: 1rem;
+        .sever_img {
+          background-color: #000000;
+          width: 30px;
+          aspect-ratio: 1/1;
+          border-radius: 5px;
+          object-fit: cover;
+        }
+      }
+      .name {
+        font-size: clamp(1.1rem, 5vw, 1.5rem);
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 10px;
+      }
+      .info {
+        font-size: clamp(1rem, 3vw, 1.5rem);
+        color: #666;
+        text-align: center;
+      }
+    }
+  }
+}
