@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.dcc{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fdc{
+    display: flex;
+    flex-direction: columns;
+}
