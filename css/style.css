@@ -20,7 +20,11 @@
 }
 
 section {
-  width: 100vw;
+  width: 100%;
+}
+
+#app{
+  margin-bottom: 4rem;
 }
 
 #about_me {
@@ -74,7 +78,7 @@ section {
     justify-content: center;
     gap: 1rem;
     padding: 2rem;
-    
+
     .card {
       width: clamp(100px, 80vw, 250px);
       background: #fff;
@@ -111,6 +115,32 @@ section {
         font-size: clamp(1rem, 3vw, 1.5rem);
         color: #666;
         text-align: center;
+      }
+    }
+  }
+}
+
+#details {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  .details{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    img{
+      aspect-ratio: 1/1;
+      width: clamp(150px, 30vw, 200px);
+    }
+    .sever{
+      display: flex;
+      gap: 1rem;
+      .sever_img{
+        background-color: #000000;
+        width: 30px;
+        aspect-ratio: 1/1;
+        border-radius: 5px;
+        object-fit: cover;
       }
     }
   }

@@ -1,6 +1,7 @@
 Vue.createApp({
     data() {
         return {
+            role_index:-1,
             role:[
                 {
                     sever_name:"無名小鎮3.0",
@@ -44,7 +45,7 @@ Vue.createApp({
         }
     },
     methods: {
-
+    
     },
     computed:{
 
@@ -52,15 +53,15 @@ Vue.createApp({
 }).mount("#app")
 
 // 動畫 偵測
-const observer = new IntersectionObserver(elements => {
-    elements.forEach(element => {
-        if (element.isIntersecting) {
-            $(element.target).addClass('show')
-        } else {
-            $(element.target).removeClass('show')
-        }
-    })
-})
-$('.hide').get().forEach(element=>{
-    observer.observe(element)
-})
+// const observer = new IntersectionObserver(elements => {
+//     elements.forEach(element => {
+//         if (element.isIntersecting) {
+//             $(element.target).addClass('show')
+//         } else {
+//             $(element.target).removeClass('show')
+//         }
+//     })
+// })
+// $('.hide').get().forEach(element=>{
+//     observer.observe(element)
+// })

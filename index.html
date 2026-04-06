@@ -1,39 +1,62 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>宋鱷壹的個人網站</title>
-    <link rel="icon" href="https://i.meee.com.tw/DLJV7m1.png" type="image/x-icon">
-    <link rel="stylesheet" href="./css/bootstrap.css">
-    <link rel="stylesheet" href="./css/style.css">
-</head>
-<body>
+    <link
+      rel="icon"
+      href="https://i.meee.com.tw/DLJV7m1.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="./css/bootstrap.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
     <div id="app">
-        <section id="about_me">
-                <div class="img"></div>
-                <div class="info">
-                    <div class="avatar"></div>
-                    <div class="name">宋鱷壹</div>
-                </div>
-        </section>
+      <section id="about_me">
+        <div class="img"></div>
+        <div class="info">
+          <div class="avatar"></div>
+          <div class="name">宋鱷壹</div>
+        </div>
+      </section>
 
-        <section id="content">
-            <div class="box">
-                <div class="card" v-for="i in role">
-                    <img :src="i.avatar[0]" alt="頭像" class="avatar">
-                    <div class="sever">
-                        <img :src="i.sever_img" alt="伺服器圖片" class="sever_img">
-                        <div class="sever_name">{{i.sever_name}}</div>
-                    </div>
-                    <div class="name">姓名：{{i.name}}</div>
-                </div>
+      <section id="content" v-if="role_index < 0">
+        <div class="box">
+          <div class="card" v-for="i,n in role" @click="role_index = n">
+            <img :src="i.avatar[0]" alt="頭像" class="avatar" />
+            <div class="sever">
+              <img :src="i.sever_img" alt="伺服器圖片" class="sever_img" />
+              <div class="sever_name">{{i.sever_name}}</div>
             </div>
-        </section>
+            <div class="name">姓名：{{i.name}}</div>
+          </div>
+        </div>
+      </section>
+
+      <section v-else>
+        <div v-for="i,n in role" id="details">
+          <div v-if="role_index === n" class="details">
+            <img :src="i.avatar[0]" alt="頭像" class="avatar" />
+            <div class="sever">
+              <img :src="i.sever_img" alt="伺服器圖片" class="sever_img" />
+              <div class="sever_name">{{i.sever_name}}</div>
+            </div>
+            <div class="name">姓名：{{i.name}}</div>
+            <div class="birthday">生日：{{i.birthday}}</div>
+            <div class="citizenship">國籍：{{i.citizenship}}</div>
+            <div class="blood_type">血型：{{i.blood_type}}</div>
+            <div class="background_story">背景故事：{{i.background_story}}</div>
+            <div class="job">職業：{{i.job}}</div>
+            <div class="end_time">故事時間：{{i.arrival_time}} ~ {{i.end_time}}</div>
+          </div>
+        </div>
+      </section>
     </div>
     <script src="./js/bootstrap.js"></script>
     <script src="./js/jquery-3.7.1.min.js"></script>
     <script src="./js/vue.js"></script>
     <script src="./js/script.js" async></script>
-</body>
+  </body>
 </html>
